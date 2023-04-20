@@ -22,6 +22,7 @@ function Booked()
             {
                 BookingObj.SelectedSeats.map((item)=>
                 {
+                    // console.log(BookingObj)
                     let j = 0
                     LocalBookedSeats[i].SelectedSeats.map((obj)=>
                     {
@@ -33,10 +34,12 @@ function Booked()
                                     flag = 1
                                     j++
                                 }
-                                console.log(temp)
                                 setAlreadyBooked(temp)
                                 
+                                
                             })
+                            let arr = obj.seats.filter(no => item.seats.indexOf(no)!==-1)
+                            console.log(arr )
         
                     })
                 })
@@ -65,7 +68,7 @@ function Booked()
             localStorage.setItem("BookedObj",JSON.stringify(Obj))
         }
     },[])
-    console.log(AlreadyBooked)
+    // console.log(AlreadyBooked)
 
     return (
         
